@@ -1,0 +1,44 @@
+<section class="mt-3">
+  <% if (errors.length !== 0) { %>
+    <article class="message is-danger">
+      <div class="message-header">
+        <p>Error Input!</p>
+        <button class="delete" aria-label="delete"></button>
+      </div>
+      <div class="message-body">        
+        <ul>
+          <% errors.forEach(error => { %>
+            <li><%= error.msg %></li>
+          <% }) %>
+        </ul>
+      </div>
+    </article>
+  <% } %>
+  <form action="/contact?_method=PUT" method="post">
+    <input type="hidden" name="oldName" value="<%= contact.name %>">
+    <input type="hidden" name="_id" value="<%= contact._id %>">
+    <div class="field">
+      <label class="label">Nama</label>
+      <div class="control">
+        <input class="input" type="text" name="name" placeholder="Nama panjang..." value="<%= contact.name %>">
+      </div>    
+    </div>
+    <div class="field">
+      <label class="label">Email</label>
+      <div class="control">
+        <input class="input" type="email" name="email" placeholder="Email..." value="<%= contact.email %>">
+      </div>    
+    </div>
+    <div class="field">
+      <label class="label">Nomor Handphone</label>
+      <div class="control">
+        <input class="input" type="text" name="nohp" placeholder="Nomor Handphone..." value="<%= contact.nohp %>">
+      </div>    
+    </div>
+    <div class="field is-grouped">
+      <div class="control">
+        <button class="button is-link">Edit Kontak</button>
+      </div>    
+    </div>
+  </form>
+</section>

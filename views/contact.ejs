@@ -1,0 +1,31 @@
+<div class="mt-4">
+  <a href="/contact/add" class="button is-success">Tambah Kontak</a>
+</div>
+<% if (msg.length != 0) { %>
+  <div class="notification is-success mt-4">
+    <button class="delete"></button>
+    <%= msg %>
+  </div>
+<% } %>
+<table class="table mt-4 is-fullwidth">
+  <thead>
+    <tr>
+      <th>No.</th>
+      <th>Nama</th>
+      <th>No HP</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% contacts.forEach((contact, i) => { %>
+      <tr>
+        <th><%= i + 1 %></th>
+        <td><%= contact.name %></td>
+        <td><%= contact.nohp %></td>
+        <td>
+          <a href="/contact/<%= contact.name %>" class="tag is-success">Detail</a>          
+        </td>
+      </tr>
+    <% }) %>
+  </tbody>
+</table>

@@ -1,0 +1,45 @@
+<section class="mt-3">
+
+  <% if (errors) { %>
+    <article class="message is-danger">
+      <div class="message-header">
+        <p>Error Input!</p>
+        <button class="delete" aria-label="delete"></button>
+      </div>
+      <div class="message-body">        
+        <ul>
+          <% errors.forEach(error => { %>
+            <li><%= error.msg %></li>
+          <% }) %>
+        </ul>
+      </div>
+    </article>
+  <% } %>
+
+  <form action="/contact" method="post">
+    <div class="field">
+      <label class="label">Nama</label>
+      <div class="control">
+        <input class="input" type="text" name="name" placeholder="Nama panjang...">
+      </div>    
+    </div>
+    <div class="field">
+      <label class="label">Email</label>
+      <div class="control">
+        <input class="input" type="email" name="email" placeholder="Email...">
+      </div>    
+    </div>
+    <div class="field">
+      <label class="label">Nomor Handphone</label>
+      <div class="control">
+        <input class="input" type="text" name="nohp" placeholder="Nomor Handphone...">
+      </div>    
+    </div>
+    <div class="field is-grouped">
+      <div class="control">
+        <button class="button is-link">Tambah Kontak</button>
+      </div>    
+    </div>
+  </form>
+  
+</section>
