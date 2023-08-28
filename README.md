@@ -6,7 +6,7 @@ Requirement:
 - NodeJS
 - Nodemon (From npmjs)
 
-Install package
+Install package with npm
 ```
 npm install
 ```
